@@ -3,11 +3,6 @@ development:
   encoding: unicode
   database: r2013-03-06-travlr_development
   pool: 5
-<<<<<<< HEAD
   username: brianyingling
   host: localhost
-=======
-  username: nblanchet
-
->>>>>>> 5b5c0ba20a4216b868949935d8babe15fc01124a
   password:
