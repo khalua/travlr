@@ -1,0 +1,8 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: r2013-03-06-travlr_development
+  pool: 5
+  username: nblanchet
+
+  password:
