@@ -16,9 +16,14 @@ function get_trip(trip_id)
       dataType: 'json',
       type: "get",
       url: "/trips/" + id
-    }).done(function(){return trip});
+    }).done(trip_return);
 
   return false;
+}
+
+function trip_return(trip_object)
+{
+  console.log("This is a trip object "+trip_object);
 }
 
 // This function populates the edit_trip form with trip object information
