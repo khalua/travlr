@@ -1,7 +1,26 @@
 class TripsController < ApplicationController
 
   def index
-    @trips =  @auth.trips
+    @trips = @auth.trips
+  end
+
+  def create
+    trip = Trip.create(params[:trip])
+    @auth.trips << trip
+    @auth.save
+    render :json => trip
+  end
+
+  def update
+    trip = Trip.find(params[:id])
+    trip.update_attributes(params[:task])
+    render :json => trip
+  end
+
+  def destroy
+    trip = Task.find(params[:id])
+    trip.delete
+    render :json => trip
   end
 
   def show
