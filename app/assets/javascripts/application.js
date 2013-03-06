@@ -9,3 +9,4 @@
 //= require 'travlr'
 //= require 'st-trip.js'
 //= require 'nicktrip.js'
+//= require 'tony-map.js'
