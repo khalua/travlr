@@ -10,7 +10,7 @@
 
 //LOOP OVER USER TRIPS
 .trips#trips
-  =@trips.each do |trip|
+  -@trips.each do |trip|
     .trip
       .showtrip
         .trip_name=trip.name

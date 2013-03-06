@@ -31,4 +31,4 @@ function update_trip()
 }
 
 // This function deletes the trip
-function delete_trip()
+function delete_trip(){}
