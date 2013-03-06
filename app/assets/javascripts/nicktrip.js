@@ -16,6 +16,10 @@ function create_trip(trip_id){
   name_div = $('<div>').addClass('trip_name').text(trip.name);
   startdate_div = $('<div>').addClass('trip_startdate').text(trip.startdate);
   enddate_div = $('<div>').addClass('trip_editdate').text(trip.editdate);
+  buttonbox = $('<div>').addClass('buttons');
+    editbutton = $('<div>').addClass('.edit_trip_btn');
+    deletebutton = $('<div>').addClass('.delete_trip_btn');
+  buttonbox.append(editbutton,deletebutton);
 
   tripblock.append();
 
