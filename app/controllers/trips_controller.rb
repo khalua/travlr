@@ -9,9 +9,8 @@ class TripsController < ApplicationController
   end
 
   def show
-    binding.pry
     trip = Trip.find(params[:id])
-
+    render :json => trip
   end
 
 end
