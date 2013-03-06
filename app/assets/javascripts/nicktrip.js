@@ -1,8 +1,8 @@
 $(function(){
     //$('body').on("click",".trip",show_activites);
 
-    $('body').on("click","")
-    $('body').on("click","edit_trip_btn",populate_edit_trip_form);
+    //$('body').on("click",".trip",brianfunctionto);
+    //$('body').on("click","edit_trip_btn",populate_edit_trip_form);
     $('body').on("click","delete_trip_btn",delete_trip);
 
 
@@ -17,6 +17,8 @@ function create_trip(trip){
 
 /*---   Adding trip block -----*/
   tripblock = $('<div>').addClass("trip");
+  /*add hidden trip*/
+  tripblock.append($('<div>').addClass("hidden_trip_id").text(trip.id));
   /*--  SHOW TRIP */
   showtrip =$('<div>').addClass("showtrip");
       name_div = $('<div>').addClass('trip_name').text(trip.name);

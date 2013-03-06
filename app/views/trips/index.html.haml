@@ -3,6 +3,7 @@
 %h1   TRIP SHIT
 %script
   var trip_array =[];
+  populate_all_trips();
 .addtrip
   .form
     //FORM STUFF GOES HERE FOR ADD
@@ -11,10 +12,10 @@
 //LOOP OVER USER TRIPS
 .trips#trips
   - @trips.each do |trip|
-    .tripactivities.hide
-      - trip.activities.each do |activity|
-        %script
-          = "activities.push(activactivity:{name:'#{activity.name}', description:'#{activity.description}',image:'#{activity.image}',address:'#{activity.address}',longitude:#{activity.longitude},latitude:#{activity.latitude},total_votes:#{activity.total_votes},trip_id:#{activity.trip_id}});"
+    - trip.activities.each do |activity|
+      %script
+        = "activities.push(activactivity:{name:'#{activity.name}', description:'#{activity.description}',image:'#{activity.image}',address:'#{activity.address}',longitude:#{activity.longitude},latitude:#{activity.latitude},total_votes:#{activity.total_votes},trip_id:#{activity.trip_id}});"
+
 
 
 
@@ -38,10 +39,8 @@
 //%script
 //  create_trip(trip.id);
 / .trip
+/   .hidden_trip_id
 /   .showtrip
-/     .updowns
-/       .up
-/       .down
 /     .trip_name=trip.name
 /     .trip_startdate=trip.startdate
 /     .trip_enddate=trip.enddate
