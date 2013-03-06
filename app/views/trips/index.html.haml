@@ -12,15 +12,22 @@
 //LOOP OVER USER TRIPS
 .trips#trips
   - @trips.each do |trip|
+<<<<<<< HEAD
     - trip.activities.each do |activity|
       %script
         = "activities.push(activactivity:{name:'#{activity.name}', description:'#{activity.description}',image:'#{activity.image}',address:'#{activity.address}',longitude:#{activity.longitude},latitude:#{activity.latitude},total_votes:#{activity.total_votes},trip_id:#{activity.trip_id}});"
 
 
+=======
+    .tripactivities.hide
+      - trip.activities.each do |activity|
+        %script
+          = "activities.push({name:'#{activity.name}', description:'#{activity.description}',image:'#{activity.image}',address:'#{activity.address}',longitude:#{activity.longitude},latitude:#{activity.latitude},total_votes:#{activity.total_votes},trip_id:#{activity.trip_id}});"
+>>>>>>> fc6a6f2c693f49272286a4d6b8eceb2cd866bbb1
 .activity_form.hide
   = form_tag('/trips') do
-    = text_field_tag 'Name'
-    = text_area_tag  'Description'
+    = text_field_tag 'activity-name'
+    = text_area_tag  'activity-description'
     = link_to "Save Changes", :class=>'button radius success tiny activity-form-btn'
     = link_to "Cancel", :class=>'button radius alert activity-form-cancel-btn'
     = submit_tag 'Enter'

@@ -10,4 +10,6 @@
 //= require 'st-trip.js'
 //= require 'nicktrip.js'
 //= require 'tony-map.js'
+//= require 'jane.js'
 //= require 'brian-activities.js'
+
