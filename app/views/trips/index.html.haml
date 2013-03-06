@@ -2,17 +2,23 @@
   .twelve.columns
     %h1   TRIP SHIT
 
-.row
-  .twelve.columns
-    .addtrip
-      .form
-        //FORM STUFF GOES HERE FOR ADD
-      .addtripbutton
 
-    //LOOP OVER USER TRIPS
-    .trips
-      =@trips.each do |trip|
-        .trip
-          .showtrip
-          .edittrip.hide
-          .tripactivities.hide
+.addtrip
+  .form
+    //FORM STUFF GOES HERE FOR ADD
+  .addtripbutton
+
+//LOOP OVER USER TRIPS
+.trips#trips
+  =@trips.each do |trip|
+    .trip
+      .showtrip
+          .trip_name=trip.name
+          .trip_startdate=trip.startdate
+          .trip_enddate=trip.enddate
+          .buttons
+            .edit_trip_btn
+            .delete_trip_btn
+      .edittrip.hide
+      .tripactivities.hide
+
