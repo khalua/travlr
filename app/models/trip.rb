@@ -14,5 +14,5 @@
 class Trip < ActiveRecord::Base
   attr_accessible :name, :startdate, :enddate
   has_many :activities, :inverse_of => :trip
-  has_and belongs_to_many :users, :inverse_of => :trip
+  has_and belongs_to_many :users
 end
