@@ -1,4 +1,8 @@
 // builds the page
+var activities = [];
+
+
+
 
 function display_activity(activity) {
 
