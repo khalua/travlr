@@ -15,9 +15,6 @@
       - trip.activities.each do |activity|
         %script
           = "activities.push(activactivity:{name:'#{activity.name}', description:'#{activity.description}',image:'#{activity.image}',address:'#{activity.address}',longitude:#{activity.longitude},latitude:#{activity.latitude},total_votes:#{activity.total_votes},trip_id:#{activity.trip_id}});"
-
-#edit_trip_form.hide
-
 .activity_form.hide
   = form_tag('/trips') do
     = text_field_tag 'Name'
@@ -25,3 +22,38 @@
     = link_to "Save Changes", :class=>'button radius success tiny activity-form-btn'
     = link_to "Cancel", :class=>'button radius alert activity-form-cancel-btn'
     = submit_tag 'Enter'
+
+#edit_trip_form.hide
+
+
+
+
+
+
+
+
+//%script
+//  create_trip(trip.id);
+/ .trip
+/   .showtrip
+/     .updowns
+/       .up
+/       .down
+/     .trip_name=trip.name
+/     .trip_startdate=trip.startdate
+/     .trip_enddate=trip.enddate
+/     .buttons
+/       .edit_trip_btn
+/       .delete_trip_btn
+/   .edittrip
+
+
+/   .activity_form.hide
+/     = form_tag do
+/       = text_field_tag 'Name'
+/       = text_area_tag  'Description'
+/       = link_to "Save Changes", :class=>'button radius success tiny activity-form-btn'
+/       = link_to "Cancel", :class=>'button radius alert activity-form-cancel-btn'
+/ .tripactivities.hide
+
+>>>>>>> cb88f246266a9ae82bab1f1958a59f7ce069a71a

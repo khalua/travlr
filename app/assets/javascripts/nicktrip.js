@@ -1,16 +1,21 @@
 $(function(){
     //$('body').on("click",".trip",show_activites);
 
+    $('body').on("click","")
+    $('body').on("click","edit_trip_btn",populate_edit_trip_form);
+    $('body').on("click","delete_trip_btn",delete_trip);
 
 
 });
 
 
-function create_trip(trip_id){
+
+function create_trip(trip){
   alert("You are creating a trip");
   trip = get_trip(trip_id);
   console.log("Creating- "+ trip);
 
+/*---   Adding trip block -----*/
   tripblock = $('<div>').addClass("trip");
   /*--  SHOW TRIP */
   showtrip =$('<div>').addClass("showtrip");
@@ -25,11 +30,14 @@ function create_trip(trip_id){
       deletebutton = $('<div>').addClass('.delete_trip_btn');
   buttonbox.append(editbutton,deletebutton);
 
-  tripblock.append();
+/*--- Creating entire trip box*/
+  tripblock.append(showtrip,buttonbox);
 
-
+/*--- Adding to trips block------*/
   $('.trips').append(tripblock);
 
+}
 
-  create_edit_trip(trip);
+function populate_all_trips(trips){
+  _.each(trips,create_trip);
 }
