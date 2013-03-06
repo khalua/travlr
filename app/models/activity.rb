@@ -11,8 +11,11 @@
 #  total_votes :integer
 #  user_id     :integer
 #  activity_id :integer
+#  latitude    :float            default(0.0)
+#  longitude   :float            default(0.0)
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  trip_id     :integer
 #
 
 class Activity < ActiveRecord::Base
