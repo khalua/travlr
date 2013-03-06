@@ -24,7 +24,7 @@
           .delete_trip_btn
       .edittrip.hide
         .activity_form.hide
-          = form_tag
+          = form_tag do
             = text_field_tag 'Name'
             = text_area_tag  'Description'
             = link_to "Save Changes", :class=>'button radius success tiny activity-form-btn'
