@@ -7,4 +7,8 @@ R20130306Travlr::Application.routes.draw do
 
   resources :users, :only => [:index, :new, :create]
 
+  # This is the trips routes
+  resources :trips
+
+
 end
