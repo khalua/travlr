@@ -22,13 +22,17 @@ function return_trip(trip_object)
 // This function populates the edit_trip form with trip object information
 function create_edit_trip(trip)
 {
-  $();
+
 }
 
 // This function updates through AJAX the trip
 function update_trip()
 {
+
 }
 
 // This function deletes the trip
-function delete_trip(){}
+function delete_trip()
+{
+
+}
