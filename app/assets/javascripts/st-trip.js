@@ -28,7 +28,11 @@ function create_edit_trip(trip)
 // This function updates through AJAX the trip
 function update_trip()
 {
+
 }
 
 // This function deletes the trip
-function delete_trip(){}
+function delete_trip()
+{
+
+}

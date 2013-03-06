@@ -10,6 +10,8 @@
 #  updated_at :datetime         not null
 #
 
+
+
 class Trip < ActiveRecord::Base
   attr_accessible :name, :startdate, :enddate
 

@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(:version => 20130306211344) do
     t.datetime "updated_at", :null => false
   end
 
-  create_table "trips_user", :id => false, :force => true do |t|
+  create_table "trips_users", :id => false, :force => true do |t|
     t.integer "trip_id"
     t.integer "user_id"
   end
