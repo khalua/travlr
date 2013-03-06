@@ -19,6 +19,11 @@ function display_activity(activity) {
   $image = $('img');
   $image.attr('src',activity.image);
 
+  // append show_activity to activity div
   $show_activity.append($name).append($description).append($category).append($image);
   $div_activity.append($show_activity);
+
+  // display form IF user wishes to edit
+  $form_activity = %('div');
+
 }
