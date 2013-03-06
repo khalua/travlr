@@ -14,7 +14,7 @@
     .tripactivities.hide
       - trip.activities.each do |activity|
         %script
-          = "activities.push(activactivity:{name:'#{activity.name}', description:'#{activity.description}',image:'#{activity.image}',address:'#{activity.address}',longitude:#{activity.longitude},latitude:#{activity.latitude},total_votes:#{activity.total_votes},trip_id:#{activity.trip_id}});"
+          = "activities.push({name:'#{activity.name}', description:'#{activity.description}',image:'#{activity.image}',address:'#{activity.address}',longitude:#{activity.longitude},latitude:#{activity.latitude},total_votes:#{activity.total_votes},trip_id:#{activity.trip_id}});"
 .activity_form.hide
   = form_tag('/trips') do
     = text_field_tag 'Name'
@@ -56,4 +56,3 @@
 /       = link_to "Cancel", :class=>'button radius alert activity-form-cancel-btn'
 / .tripactivities.hide
 
->>>>>>> cb88f246266a9ae82bab1f1958a59f7ce069a71a

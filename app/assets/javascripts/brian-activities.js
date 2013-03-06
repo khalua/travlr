@@ -1,8 +1,6 @@
 // builds the page
 
 
-function process_activit
-
 
 function display_activity(activity) {
 

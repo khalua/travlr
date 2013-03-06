@@ -41,3 +41,8 @@ function create_trip(trip){
 function populate_all_trips(trips){
   _.each(trips,create_trip);
 }
+
+function populate_edit_trip_form()
+{
+
+}
