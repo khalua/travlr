@@ -2,9 +2,9 @@ $(function() {
   // event handlers
 
   // shows/hide activity form
-  $('.trip').click(function() {$(this).toggle();} );
+  $('.trip').click(process_activities);
 
-  $('#activity_form').
+  $('#activity_form').click();
 
 
 });

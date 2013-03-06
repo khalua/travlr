@@ -1,7 +1,19 @@
 // builds the page
 var activities = [];
 
-function process_activit
+
+function create_activity() {
+  var name = $('#activity-name').val();
+  var description = $('#activity-description').val();
+  var
+}
+
+
+
+
+function process_activity() {
+
+}
 
 
 function display_activity(activity) {
