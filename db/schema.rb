@@ -11,30 +11,34 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130228151737) do
+ActiveRecord::Schema.define(:version => 20130306204518) do
 
   create_table "activities", :force => true do |t|
     t.string   "name"
     t.string   "category"
     t.string   "address"
-    t.text     "image"
+    t.text     "image",       :default => "http://msnbcmedia3.msn.com/j/ap/travel%20trip%20grand%20canyon%20hiking--1490284461_v2.grid-6x2.jpg"
     t.text     "description"
-    t.integer  "total_votes"
+    t.integer  "total_votes", :default => 0
     t.integer  "user_id"
     t.integer  "activity_id"
     t.float    "latitude",    :default => 0.0
     t.float    "longitude",   :default => 0.0
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.datetime "created_at",                                                                                                                     :null => false
+    t.datetime "updated_at",                                                                                                                     :null => false
   end
 
   create_table "trips", :force => true do |t|
     t.string   "name"
     t.date     "startdate"
     t.date     "enddate"
-    t.integer  "priority_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "trips_user", :id => false, :force => true do |t|
+    t.integer "trip_id"
+    t.integer "user_id"
   end
 
   create_table "users", :force => true do |t|
