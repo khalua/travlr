@@ -26,15 +26,17 @@
 
       .tripactivities.hide
         - trip.activities.each do |activity|
-          .activity
-            .showactivity
-              .updowns
-                .up
-                .down
-              .total_votes=activity.total_votes
-              =image_tag activity.image
-              .activity-name=activity.name
-              .activity-description=activity.description
+          %script
+            ="activities.push(activactivity:{name:'#{activity.name}', description:'#{activity.description}',image:'#{activity.image}',address:'#{activity.address}',longitude:#{activity.longitude},latitude:#{activity.latitude},votes:#{activity.votes},trip_id:#{activity.trip_id}});"
+          / .activity
+          /   .showactivity
+          /     .updowns
+          /       .up
+          /       .down
+          /     .total_votes=activity.total_votes
+          /     =image_tag activity.image
+          /     .activity-name=activity.name
+          /     .activity-description=activity.description
             .activity_form.hide
               = form_tag do
                 = text_field_tag 'Name'
