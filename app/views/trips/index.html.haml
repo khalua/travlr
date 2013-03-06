@@ -17,8 +17,6 @@
         = "activities.push(activactivity:{name:'#{activity.name}', description:'#{activity.description}',image:'#{activity.image}',address:'#{activity.address}',longitude:#{activity.longitude},latitude:#{activity.latitude},total_votes:#{activity.total_votes},trip_id:#{activity.trip_id}});"
 
 
-
-
 .activity_form.hide
   = form_tag('/trips') do
     = text_field_tag 'Name'

@@ -18,7 +18,7 @@ function create_trip(trip){
 /*---   Adding trip block -----*/
   tripblock = $('<div>').addClass("trip");
   /*add hidden trip*/
-  tripblock.append($('<div>').addClass("hidden_trip_id").text(trip.id));
+  tripblock.append($('<div>').addClass("hidden_trip_id").text(trip.id).hide());
   /*--  SHOW TRIP */
   showtrip =$('<div>').addClass("showtrip");
       name_div = $('<div>').addClass('trip_name').text(trip.name);
