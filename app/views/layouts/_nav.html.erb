@@ -19,14 +19,7 @@
         <% else %>
           <li><%= link_to("Log in", login_path) %></li>
         <% end %>
-        <li class="has-dropdown">
-          <a href="#">Users Admin</a>
-
-          <ul class="dropdown">
-            <li><%= link_to("Create Account", new_user_path) %></li>
-            <li><%= link_to("Show Users", users_path) %> </li>
-          </ul>
-        </li>
+        <li><%= link_to("Create Account", new_user_path) %></li>
       </ul>
     </section>
   </nav>
