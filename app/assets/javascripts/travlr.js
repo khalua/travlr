@@ -9,3 +9,4 @@ $(function() {
 
 });
 
+var activities = [];

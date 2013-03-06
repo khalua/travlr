@@ -1,5 +1,5 @@
 // builds the page
-var activities = [];
+
 
 
 
@@ -28,6 +28,6 @@ function display_activity(activity) {
   $div_activity.append($show_activity);
 
   // display form IF user wishes to edit
-  $form_activity = %('div');
+  $form_activity = $('div');
 
 }
