@@ -7,3 +7,4 @@
 //= require 'underscore-min.js'
 //= require 'moment.min.js'
 //= require 'travlr'
+//= require 'nicktrip.js'
