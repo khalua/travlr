@@ -1,7 +1,7 @@
 // builds the page
 var activities = [];
 
-
+function process_activit
 
 
 function display_activity(activity) {
