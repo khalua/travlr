@@ -1,5 +1,5 @@
 $(function(){
-    $('body').on("click",".trip",show_activites);
+    //$('body').on("click",".trip",show_activites);
 
 
 
