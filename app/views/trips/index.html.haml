@@ -3,7 +3,6 @@
 %h1   TRIP SHIT
 %script
   var trip_array =[];
-  populate_all_trips();
 .addtrip
   .form
     //FORM STUFF GOES HERE FOR ADD
@@ -11,6 +10,9 @@
 
 //LOOP OVER USER TRIPS
 .trips#trips
+  - @trips.each do |trip|
+    %script
+      ="create_trip_from_id(#{trip.id});"
 
 
 
