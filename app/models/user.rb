@@ -12,7 +12,7 @@
 
 class User < ActiveRecord::Base
   attr_accessible :name, :email, :password, :password_confirmation
-  has_many :trips, :inverse_of => :user
-  has_many :activities, :inverse_of => :user
+  has_and_belongs_to_many :trips
+  has_many :activities
   has_secure_password
 end

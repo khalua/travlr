@@ -13,7 +13,6 @@
 
 class Trip < ActiveRecord::Base
   attr_accessible :name, :startdate, :enddate
-  has_many :activities, :inverse_of => :trip
-  has_many :users, :inverse_of => :trip
-  has_secure_password
+  has_many :activities
+  has_and_belongs_to_many :users
 end

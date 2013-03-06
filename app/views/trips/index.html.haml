@@ -1,5 +1,6 @@
-%h1   TRIP SHIT
-
+.row
+  .twelve.columns
+    %h1   TRIP SHIT
 
 
 .addtrip
@@ -8,7 +9,7 @@
   .addtripbutton
 
 //LOOP OVER USER TRIPS
-.trips
+.trips#trips
   =@trips.each do |trip|
     .trip
       .showtrip
@@ -28,3 +29,6 @@
             = text_area_tag  'Description'
             = link_to "Save Changes", :class=>'button radius success tiny activity-form-btn',
       .tripactivities.hide
+
+#edit_trip_form.hide
+
