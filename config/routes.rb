@@ -1,5 +1,5 @@
 R20130306Travlr::Application.routes.draw do
- root :to => 'trips#index'
+ root :to => 'welcome#index'
 
   get '/login' => 'session#new'
   post '/login' => 'session#create'
