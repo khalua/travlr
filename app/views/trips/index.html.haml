@@ -1,16 +1,18 @@
-%h1   TRIP SHIT
+.row
+  .twelve.columns
+    %h1   TRIP SHIT
 
+.row
+  .twelve.columns
+    .addtrip
+      .form
+        //FORM STUFF GOES HERE FOR ADD
+      .addtripbutton
 
-
-.addtrip
-  .form
-    //FORM STUFF GOES HERE FOR ADD
-  .addtripbutton
-
-//LOOP OVER USER TRIPS
-.trips
-  =@trips.each do |trip|
-    .trip
-      .showtrip
-      .edittrip.hide
-      .tripactivities.hide
+    //LOOP OVER USER TRIPS
+    .trips
+      =@trips.each do |trip|
+        .trip
+          .showtrip
+          .edittrip.hide
+          .tripactivities.hide
