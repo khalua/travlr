@@ -25,7 +25,6 @@ function create_trip(trip_id){
       deletebutton = $('<div>').addClass('.delete_trip_btn');
   buttonbox.append(editbutton,deletebutton);
 
-
   tripblock.append();
 
 
