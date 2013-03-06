@@ -24,6 +24,7 @@ function get_trip(trip_id)
 function trip_return(trip_object)
 {
   console.log("This is a trip object "+trip_object);
+  return trip_object;
 }
 
 // This function populates the edit_trip form with trip object information
