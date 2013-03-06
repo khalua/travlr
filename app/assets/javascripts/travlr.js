@@ -4,12 +4,8 @@ $(function() {
   // shows/hide activity form
   $('.trip').click(function() {$(this).toggle();} );
 
-  $()
+  $('#activity_form').
 
 
 });
 
-// shows,
-function toggle_form() {
-  $(this).toggle();
-}

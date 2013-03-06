@@ -10,24 +10,25 @@
 
 //LOOP OVER USER TRIPS
 .trips#trips
-  =@trips.each do |trip|
+  - @trips.each do |trip|
     .trip
       .showtrip
-          .updowns
-            .up
-            .down
-          .trip_name=trip.name
-          .trip_startdate=trip.startdate
-          .trip_enddate=trip.enddate
-          .buttons
-            .edit_trip_btn
-            .delete_trip_btn
+        .updowns
+          .up
+          .down
+        .trip_name=trip.name
+        .trip_startdate=trip.startdate
+        .trip_enddate=trip.enddate
+        .buttons
+          .edit_trip_btn
+          .delete_trip_btn
       .edittrip.hide
         .activity_form.hide
           = form_tag
             = text_field_tag 'Name'
             = text_area_tag  'Description'
-            = link_to "Save Changes", :class=>'button radius success tiny activity-form-btn',
+            = link_to "Save Changes", :class=>'button radius success tiny activity-form-btn'
+            = link_to "Cancel", :class=>'button radius alert activity-form-cancel-btn'
       .tripactivities.hide
 
 #edit_trip_form.hide
