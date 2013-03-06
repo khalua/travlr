@@ -22,8 +22,10 @@ ActiveRecord::Schema.define(:version => 20130228151737) do
     t.integer  "total_votes"
     t.integer  "user_id"
     t.integer  "activity_id"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.float    "latitude",    :default => 0.0
+    t.float    "longitude",   :default => 0.0
+    t.datetime "created_at",                   :null => false
+    t.datetime "updated_at",                   :null => false
   end
 
   create_table "trips", :force => true do |t|
