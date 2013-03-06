@@ -18,10 +18,9 @@ a4 = Activity.create(:name => "Activity4", :category => "cat3", :address => "Boi
 a5 = Activity.create(:name => "Activity5", :category => "cat4", :address => "Los Angeles, CA", :description => "blah blah blah" )
 a6 = Activity.create(:name => "Activity6", :category => "cat4", :address => "Lincoln, Nebraska", :description => "blah blah blah" )
 
-
-u1.trips << t1 << t2 << t3
-u2.trips << t1 << t2 << t3
-u3.trips << t1 << t2 << t3
+u1.trips << t1
+u2.trips << t2
+u3.trips << t3
 
 t1.activities << a1 << a2
 t2.activities << a3 << a4
