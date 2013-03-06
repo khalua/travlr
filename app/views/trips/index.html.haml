@@ -11,18 +11,20 @@
 //LOOP OVER USER TRIPS
 .trips#trips
   - @trips.each do |trip|
-  .tripactivities.hide
-    - trip.activities.each do |activity|
-      %script
-        = "activities.push(activactivity:{name:'#{activity.name}', description:'#{activity.description}',image:'#{activity.image}',address:'#{activity.address}',longitude:#{activity.longitude},latitude:#{activity.latitude},votes:#{activity.votes},trip_id:#{activity.trip_id}});"
+    .tripactivities.hide
+      - trip.activities.each do |activity|
+        %script
+          = "activities.push(activactivity:{name:'#{activity.name}', description:'#{activity.description}',image:'#{activity.image}',address:'#{activity.address}',longitude:#{activity.longitude},latitude:#{activity.latitude},total_votes:#{activity.total_votes},trip_id:#{activity.trip_id}});"
+
 
 
 .activity_form.hide
-  = form_tag do
+  = form_tag('/trips') do
     = text_field_tag 'Name'
     = text_area_tag  'Description'
     = link_to "Save Changes", :class=>'button radius success tiny activity-form-btn'
     = link_to "Cancel", :class=>'button radius alert activity-form-cancel-btn'
+    = submit_tag 'Enter'
 
 #edit_trip_form.hide
 
@@ -33,8 +35,8 @@
 
 
 
-  //%script
-  //  create_trip(trip.id);
+//%script
+//  create_trip(trip.id);
 / .trip
 /   .showtrip
 /     .updowns
