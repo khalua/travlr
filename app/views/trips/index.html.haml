@@ -1,0 +1,16 @@
+%h1   TRIP SHIT
+
+
+
+.addtrip
+  .form
+    //FORM STUFF GOES HERE FOR ADD
+  .addtripbutton
+
+//LOOP OVER USER TRIPS
+.trips
+  =@trips.each do |trip|
+    .trip
+      .showtrip
+      .edittrip.hide
+      .tripactivities.hide
