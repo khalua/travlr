@@ -4,7 +4,6 @@ class AddTripsTable < ActiveRecord::Migration
       t.string :name
       t.date :startdate
       t.date :enddate
-      t.integer :priority_id
       t.timestamps
     end
   end
