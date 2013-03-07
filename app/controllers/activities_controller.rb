@@ -35,4 +35,4 @@ class ActivitiesController < ApplicationController
     activity.save
     render :json => activity
   end
-
+end

@@ -22,7 +22,7 @@
 .trips#trips
   - @trips.each do |trip|
     = hidden_field_tag "trip_id", trip.id
-    = link_to("New Activity", nil, :id=>'new_activity', :class=>'button radius')
+    = link_to("New Activity", nil, :id=>'new_activity', :class=>'button radius new_activity')
     %script
       = "trip_array.push({name:'#{trip.name}',startdate:'#{trip.startdate}',enddate:'#{trip.enddate}',id:#{trip.id}});"
     .tripactivities.hide
@@ -31,7 +31,7 @@
           = "activities.push({name:'#{activity.name}', description:'#{activity.description}',image:'#{activity.image}',address:'#{activity.address}',longitude:#{activity.longitude},latitude:#{activity.latitude},total_votes:#{activity.total_votes},trip_id:#{activity.trip_id}});"
 .row
   .five.columns
-    .activity_form.hide
+    #activity_form.hide
       = form_tag('/trips') do
         = label_tag      'Name'
         = text_field_tag 'activity-name'
@@ -47,8 +47,9 @@
         = link_to("Save Changes",'#', :id => "activity-save-changes", :class=>'button radius success activity-form-btn')
         = link_to("Cancel", '#', :id =>"activity-cancel", :class=>'button radius alert activity-form-cancel-btn')
         = link_to('Enter', '#', :id =>"activity-enter", :class=>"button radius")
-
-
+.row
+  .twelve.columns
+    #map_canvas
 
 
 

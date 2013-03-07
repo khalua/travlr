@@ -23,8 +23,9 @@ function prep_markers(activity)
   title = activity.name;
   latitude = activity.latitude;
   longitude = activity.longitude;
-  add_marker(latitude, longitude, title);
+  //add_marker(latitude, longitude, title);
 }
+
 
 function display_map(lat, longitude, zoom)
 {
@@ -60,6 +61,7 @@ function process_location(geo_data)
   title = geo_data[2];
   add_marker(latitude, longitude, title);
 }
+
 
 function add_marker(lat, longitude, title)
 {
