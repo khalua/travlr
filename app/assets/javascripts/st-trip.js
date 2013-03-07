@@ -44,20 +44,15 @@ function trip_return(trip_object)
 // This function populates the edit_trip form with trip object information
 function populate_edit_trip_form()
 {
-
-  //hide save button
-
-  //MAKE SURE TO FIND TRIP ID
-
   show_new_trip_form();
   $('#trip_update').show();
   $('#trip_save').hide();
-  alert("YOU EDIT");
-
-  var name = $('#trip-name').val();
-  var startdate = $('#trip-startdate').val();
-  var enddate = $('#trip-enddate').val();
-  var token = $('input[name=authenticity_token]').val();
+  var trip_id_for_hidden = $(this).parent().parent().children().eq(0).text();
+  $('#trip_id').val(trip_id_for_hidden);
+  $('#trip-name').val($(this).parent().parent().children().eq(1).children().eq(0).text());
+  $('#trip-startdate').val($(this).parent().parent().children().eq(1).children().eq(1).text());
+  $('#trip-enddate').val($(this).parent().parent().children().eq(1).children().eq(2).text());
+  $('input[name=authenticity_token]').val();
   // Move to correct DOM location
   // $('').attach();
 }
