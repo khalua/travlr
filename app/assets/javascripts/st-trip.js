@@ -34,12 +34,17 @@ function trip_return(trip_object)
 {
   trip_array = _.reject(trip_array, function(t){return t.id == trip_object.id;});
   trip_array.push(trip_object);
+  $('.trips').empty();
+  populate_all_trips(trip_array);
   // trip_array = _.sortBy(trip_array, function(t){ return t.value;}).reverse();
 }
 
 // This function populates the edit_trip form with trip object information
 function populate_edit_trip_form()
 {
+  //hide save button
+  $('#trip_update').show();
+  $('#trip_save').hide();
   //MAKE SURE TO FIND TRIP ID
   var trip_id = get_trip_id();
 
@@ -112,6 +117,7 @@ function show_new_trip_form()
 {
   $('.addtripbutton').hide();
   $('.trip_form').show();
+  $('#trip_update').hide();
 }
 
 function hide_new_trip_form()
