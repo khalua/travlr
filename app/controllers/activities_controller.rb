@@ -5,6 +5,10 @@ class ActivitiesController < ApplicationController
   end
 
   def create
+    binding.pry
+    activity = Activity.create(params[:activity]);
+
+    render :json => [activity]
   end
 
   def update
@@ -12,5 +16,4 @@ class ActivitiesController < ApplicationController
     activity.update_attributes(params[:activity])
     render :json => activity
   end
-
 end

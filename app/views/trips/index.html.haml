@@ -25,28 +25,20 @@
   .five.columns
     .activity_form.hide
       = form_tag('/trips') do
-<<<<<<< HEAD
         = label_tag      'Name'
         = text_field_tag 'activity-name'
-        = label_tag      'Description'
+        = label_tag      'category'
+        = text_field_tag 'activity-category'
+        = label_tag      'description'
         = text_area_tag  'activity-description'
         = label_tag      'Address'
         = text_field_tag "activity-address"
         = label_tag      'Image'
-=======
-        = text_field_tag 'activity-name'
-        = text_area_tag  'activity-description'
-        = text_field_tag "activity-address"
->>>>>>> d88d37dc8c23c81db629080b7c694cc7796d1619
         = text_field_tag "activity-image"
-        = hidden_field_tag "activity-id"
+        = hidden_field_tag "trip_id"
         = link_to("Save Changes",nil, :id => "activity-save-changes", :class=>'button radius success activity-form-btn')
         = link_to("Cancel", nil, :id =>"activity-cancel", :class=>'button radius alert activity-form-cancel-btn')
-        = link_to('Enter', nil, :id =>"activity-enter", :class=>"button radius")
-<<<<<<< HEAD
-
-=======
->>>>>>> d88d37dc8c23c81db629080b7c694cc7796d1619
+        = link_to('Enter', nil, :id =>"create_activity", :class=>"button radius")
 #edit_trip_form.hide
 
 

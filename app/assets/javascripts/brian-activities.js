@@ -4,24 +4,28 @@
 function create_activity() {
   var name = $('#activity-name').val();
   var description = $('#activity-description').val();
+  var category = $('#activity-category').val();
   var image = $('#activity-image').val();
   var address = $('#activity-address').val();
   var trip_id = $('#trip_id').val();
+  var token = $("input[name=authenticity_token]").val();
+
   $.ajax({
     dataType: 'json',
     type: 'post',
     url: '/activities',
-    data:{authenticity_token:token}
+    data:{authenticity_token:token,'activity[name]':name,'activity[description]':description,'activity[image]':image,'activity[address]':address,'activity[trip_id]':trip_id}
 
   }).done(process_activity);
+
+  return false;
 
 }
 
 
 
 
-function process_activities() {
-
+function process_activity() {
   _.each(activities, display_activity)
 }
 
@@ -88,6 +92,7 @@ function display_activity(activity) {
 // empties and displays the activity form before rendering it.
 // called when clicking the new activity form
 function show_activity_form() {
+  alert('got here');
    $('#activity-name').val('');
    $('#activity-description').val('');
    $('#activity-image').val('');
@@ -96,7 +101,7 @@ function show_activity_form() {
    // show activity form
    $('.activity_form').show();
 
-   // append form after the new priority button
+   // append form after the new activity button
    $('#new_activity').after($('.activity_form') );
    $('#new_activity').hide();
    return false;
