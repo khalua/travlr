@@ -6,7 +6,6 @@ class ActivitiesController < ApplicationController
 
   def create
     activity = Activity.create(params[:activity]);
-
     render :json => activity
   end
 

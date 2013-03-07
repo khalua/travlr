@@ -19,7 +19,7 @@ $(function() {
   //voting
   $("#activities_table").on("click", ".vote_down_button", vote_down_activity);
   $("#activities_table").on("click", ".vote_up_button", vote_up_activity);
-  $('#trip').on('click', '.trip', toggle_trip);
+  $('body').on('click', '.trip', toggle_trip);
   //updates activity info
   //$("#activity-save-changes").click(update_activity);
 

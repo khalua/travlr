@@ -114,8 +114,9 @@ function hide_activity_form() {
 }
 
 function toggle_trip() {
-  alert('got here');
-  $(this).toggle;
+  alert('got here toggle');
+  $(this).toggle();
+
 }
 
 
