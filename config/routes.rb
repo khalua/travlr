@@ -8,7 +8,7 @@ R20130306Travlr::Application.routes.draw do
   resources :users, :only => [:index, :new, :create]
 
   # This is the trips routes
-  resources :trips, :only => [:show, :create, :index]
+  resources :trips, :only => [:show, :create, :index, :update, :destroy]
   resources :activities, :only => [:show, :create, :update, :destroy] do
     member do
       post :up

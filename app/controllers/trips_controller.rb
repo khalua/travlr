@@ -18,7 +18,7 @@ class TripsController < ApplicationController
   end
 
   def destroy
-    trip = Task.find(params[:id])
+    trip = Trip.find(params[:id])
     trip.delete
     render :json => trip
   end
