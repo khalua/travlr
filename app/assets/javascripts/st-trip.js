@@ -3,6 +3,8 @@ var trip_object;
 $(function(){
   // shows new trip form
   $('.addtripbutton').click(show_new_trip_form);
+  // cancels new trip form
+  $('#trip_cancel').click(hide_new_trip_form);
   // Creates a new trip from the form
   $('#trip_save').click(create_trip);
 });
@@ -104,5 +106,11 @@ function delete_trip()
 function show_new_trip_form()
 {
   $('.addtripbutton').hide();
-  $('.form').show();
+  $('.trip_form').show();
+}
+
+function hide_new_trip_form()
+{
+  $('.addtripbutton').show();
+  $('.trip_form').hide();
 }
