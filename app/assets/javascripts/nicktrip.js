@@ -19,7 +19,7 @@ function show_trip(trip){
   console.log("Creating- "+ trip);
 
 /*---   Adding trip block -----*/
-  tripblock = $('<div>').addClass("trip");
+  tripblock = $('<div>').addClass("trip clearfix");
   /*add hidden trip*/
   tripblock.append($('<div>').addClass("hidden_trip_id").text(trip.id).hide());
   /*--  SHOW TRIP */
@@ -34,6 +34,7 @@ function show_trip(trip){
       editbutton = $('<div>').addClass('edit_trip_btn');
       deletebutton = $('<div>').addClass('delete_trip_btn');
   buttonbox.append(editbutton,deletebutton);
+
 
 /*--- Creating entire trip box*/
   tripblock.append(showtrip,buttonbox);

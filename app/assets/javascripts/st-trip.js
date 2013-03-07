@@ -1,4 +1,4 @@
-var trip_object;
+
 
 $(function(){
   // shows new trip form
