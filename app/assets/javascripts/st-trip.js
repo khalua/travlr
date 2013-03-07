@@ -13,7 +13,7 @@ $(function(){
 function get_trip_id()
 {
   //MAKE SURE TO FIND TRIP ID
-  // var trip_id = $('').text();
+  // var trip_id = $(this).parent.prev().prev().text();
   // return trip_id
 }
 
@@ -79,11 +79,15 @@ function create_trip()
 function update_trip()
 {
   //MAKE SURE TO FIND TRIP ID
-  var trip_id = get_trip_id();
+  // var trip_id = get_trip_id();
+  var id = $(this).parent.prev().prev().text();
+  var name = $(this).parent.prev().children().first().text();
+  var startdate = $(this).parent.prev().children().first().next().text();
+  var enddate = $(this).parent.prev().children().first().next().next().text();
 
-  var name = $('#name').val();
-  var startdate = $('#startdate').val();
-  var enddate = $('#enddate').val();
+  // var name = $('#name').val();
+  // var startdate = $('#startdate').val();
+  // var enddate = $('#enddate').val();
 
   var token = $('input[name=authenticity_token]').val();
 
@@ -99,7 +103,9 @@ function update_trip()
 function delete_trip()
 {
   //MAKE SURE TO FIND TRIP ID
-  var trip_id = get_trip_id();
+  // var trip_id = get_trip_id();
+
+  var id = $(this).parent.prev().prev().text();
 
   var token = $('input[name=authenticity_token]').val();
 
