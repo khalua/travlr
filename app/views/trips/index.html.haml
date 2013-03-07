@@ -1,26 +1,73 @@
 .row
   .twelve.columns
-%h1   TRIP SHIT
+    %h1   TRIP SHIT
 %script
-  var trip_array =[];
+  var trip_array = [];
+  var activities = [];
 .addtrip
-  .form
+  .trip_form
+    = form_tag('/trips') do
+      = text_field_tag 'trip-name', nil, :placeholder => "Trip Name"
+      = text_field_tag 'trip-startdate', nil, :placeholder => "Start Date"
+      = text_field_tag 'trip-enddate', nil, :placeholder => "End Date"
+      = link_to("Save Changes",nil, :id => "trip_save_changes", :class=>'button radius success activity-form-btn')
+      = link_to("Cancel", nil, :id =>"trip_cancel", :class=>'button radius alert activity-form-cancel-btn')
+      = link_to('Enter', nil, :id =>"trip_enter", :class=>"button radius")
     //FORM STUFF GOES HERE FOR ADD
-  .addtripbutton
+  .addtripbutton.small
+
 
 //LOOP OVER USER TRIPS
 .trips#trips
   - @trips.each do |trip|
+    %script
+      ="trip_array.push({name:'#{trip.name}',startdate:'#{trip.startdate}',enddate:'#{trip.enddate}',id:#{trip.id}});"
     .tripactivities.hide
+      = link_to("New Activity", nil, :id=>'new_activity', :class=>'button')
       - trip.activities.each do |activity|
         %script
-          = "activities.push(activactivity:{name:'#{activity.name}', description:'#{activity.description}',image:'#{activity.image}',address:'#{activity.address}',longitude:#{activity.longitude},latitude:#{activity.latitude},votes:#{activity.votes},trip_id:#{activity.trip_id}});"
-        .activity_form.hide
-          = form_tag('/trips') do
-            = text_field_tag 'Name'
-            = text_area_tag  'Description'
-            = link_to "Save Changes", :class=>'button radius success tiny activity-form-btn'
-            = link_to "Cancel", :class=>'button radius alert activity-form-cancel-btn'
-            = submit_tag 'Enter'
+          = "activities.push({name:'#{activity.name}', description:'#{activity.description}',image:'#{activity.image}',address:'#{activity.address}',longitude:#{activity.longitude},latitude:#{activity.latitude},total_votes:#{activity.total_votes},trip_id:#{activity.trip_id}});"
+.row
+  .five.columns
+    .activity_form.hide
+      = form_tag('/trips') do
+        = label_tag      'Name'
+        = text_field_tag 'activity-name'
+        = label_tag      'Description'
+        = text_area_tag  'activity-description'
+        = label_tag      'Address'
+        = text_field_tag "activity-address"
+        = label_tag      'Image'
+        = text_field_tag "activity-image"
+        = hidden_field_tag "activity-id"
+        = link_to("Save Changes",nil, :id => "activity-save-changes", :class=>'button radius success activity-form-btn')
+        = link_to("Cancel", nil, :id =>"activity-cancel", :class=>'button radius alert activity-form-cancel-btn')
+        = link_to('Enter', nil, :id =>"activity-enter", :class=>"button radius")
+
 #edit_trip_form.hide
 
+
+
+
+
+/ %script
+/   populate_all_trips(trip_array);
+/ .trip
+/   .hidden_trip_id
+/   .showtrip
+/     .trip_name=trip.name
+/     .trip_startdate=trip.startdate
+/     .trip_enddate=trip.enddate
+/     .buttons
+/       .edit_trip_btn
+/       .delete_trip_btn
+/   .edittrip
+
+
+/   .activity_form.hide
+/     = form_tag do
+/       = text_field_tag 'Name'
+/       = text_area_tag  'Description'
+/       = link_to "Save Changes", :class=>'button radius success tiny activity-form-btn'
+/       = link_to "Cancel", :class=>'button radius alert activity-form-cancel-btn'
+/ .tripactivities.hide

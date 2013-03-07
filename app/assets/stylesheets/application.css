@@ -3,4 +3,5 @@
  *= require 'foundation/stylesheets/app.css'
  *= require 'minicolors/jquery.minicolors.css'
  *= require 'travlr'
+ *= require 'trip'
  */
