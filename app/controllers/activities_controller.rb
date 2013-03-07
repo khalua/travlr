@@ -13,4 +13,24 @@ class ActivitiesController < ApplicationController
     render :json => activity
   end
 
+  def destroy
+    activity = Activity.find(params[:id])
+    activity.delete
+    render :json => activity
+  end
+
+  def up
+    activity = Activity.find(params[:id])
+    activity.total_votes += 1
+    activity.save
+    render :json => activity
+  end
+
+  def down
+    activity = Activity.find(params[:id])
+    activity.total_votes -= 1
+    activity.save
+    render :json => activity
+  end
+
 end
