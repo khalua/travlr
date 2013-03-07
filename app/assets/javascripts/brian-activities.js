@@ -88,7 +88,6 @@ function display_activity(activity) {
 // empties and displays the activity form before rendering it.
 // called when clicking the new activity form
 function show_activity_form() {
-  alert('got here');
    $('#activity-name').val('');
    $('#activity-description').val('');
    $('#activity-image').val('');
@@ -99,6 +98,7 @@ function show_activity_form() {
 
    // append form after the new priority button
    $('#new_activity').after($('.activity_form') );
+   $('#new_activity').hide();
    return false;
 }
 
