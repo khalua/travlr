@@ -35,6 +35,7 @@ function get_trip(trip_id)
 function trip_return(trip_object)
 {
   clear_trip_form();
+  hide_new_trip_form();
   trip_array = _.reject(trip_array, function(t){return t.id == trip_object.id;});
   trip_array.push(trip_object);
   $('.trips').empty();
@@ -136,6 +137,7 @@ function show_new_trip_form()
   $('.addtripbutton').hide();
   $('.trip_form').show();
   $('#trip_update').hide();
+  $('#trip_save').show();
 }
 
 function hide_new_trip_form()
