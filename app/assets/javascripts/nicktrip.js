@@ -35,9 +35,12 @@ function show_trip(trip){
       deletebutton = $('<div>').addClass('delete_trip_btn');
   buttonbox.append(editbutton,deletebutton);
 
+  add_activity_button= $('<div>').addClass("new_activity inline button radius").text("New Activity");
+
 
 /*--- Creating entire trip box*/
-  tripblock.append(showtrip,buttonbox);
+  tripblock.append(showtrip,buttonbox,add_activity_button);
+
 
 /*--- Adding to trips block------*/
   $('.trips').append(tripblock);
