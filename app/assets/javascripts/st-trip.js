@@ -34,6 +34,8 @@ function trip_return(trip_object)
 {
   trip_array = _.reject(trip_array, function(t){return t.id == trip_object.id;});
   trip_array.push(trip_object);
+  $('.trips').empty();
+  populate_all_trips(trip_array);
   // trip_array = _.sortBy(trip_array, function(t){ return t.value;}).reverse();
 }
 
