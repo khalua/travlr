@@ -7,6 +7,7 @@ $(function(){
   $('#trip_cancel').click(hide_new_trip_form);
   // Creates a new trip from the form
   $('#trip_save').click(create_trip);
+
   $('body').on("click",".edit_trip_btn",populate_edit_trip_form);
 });
 
