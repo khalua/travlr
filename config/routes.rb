@@ -9,6 +9,7 @@ R20130306Travlr::Application.routes.draw do
 
   # This is the trips routes
   resources :trips
+  resources :activities, :only => [:show, :create]
 
 
 end
