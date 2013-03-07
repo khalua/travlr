@@ -18,35 +18,35 @@
 .addtripbutton.small
 
 
-//LOOP OVER USER TRIPS
-.trips#trips
-  - @trips.each do |trip|
-    %script
-      ="trip_array.push({name:'#{trip.name}',startdate:'#{trip.startdate}',enddate:'#{trip.enddate}',id:#{trip.id}});"
-    .tripactivities.hide
-      = link_to("New Activity", nil, :id=>'new_activity', :class=>'button')
-      - trip.activities.each do |activity|
+.row
+  .twelve.columns
+    //LOOP OVER USER TRIPS
+    .trips#trips
+
+      - @trips.each do |trip|
         %script
-          = "activities.push({name:'#{activity.name}', description:'#{activity.description}',image:'#{activity.image}',address:'#{activity.address}',longitude:#{activity.longitude},latitude:#{activity.latitude},total_votes:#{activity.total_votes},trip_id:#{activity.trip_id}});"
+          ="add_trip_to_array(#{trip.id});"
+        .tripactivities
+          - trip.activities.each do |activity|
+            %script
+              = "activities.push({id:#{activity.id}, name:'#{activity.name}', description:'#{activity.description}',image:'#{activity.image}',address:'#{activity.address}',longitude:#{activity.longitude},latitude:#{activity.latitude},total_votes:#{activity.total_votes},trip_id:#{activity.trip_id}});"
 .row
   .five.columns
+    %script process_activity();
     .activity_form.hide
       = form_tag('/trips') do
-        = label_tag      'Name'
         = text_field_tag 'activity-name'
-        = label_tag      'Description'
         = text_area_tag  'activity-description'
-        = label_tag      'Address'
         = text_field_tag "activity-address"
-        = label_tag      'Image'
         = text_field_tag "activity-image"
         = hidden_field_tag "activity-id"
         = link_to("Save Changes",nil, :id => "activity-save-changes", :class=>'button radius success activity-form-btn')
         = link_to("Cancel", nil, :id =>"activity-cancel", :class=>'button radius alert activity-form-cancel-btn')
         = link_to('Enter', nil, :id =>"activity-enter", :class=>"button radius")
-
 #edit_trip_form.hide
-#map_canvas.hide
+.row
+  .twelve.columns
+    #map_canvas
 
 
 
