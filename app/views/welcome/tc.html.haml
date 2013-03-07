@@ -1,0 +1,14 @@
+.row
+  .one.columns
+    %h1 Yo
+  .eight.columne
+  .three.columns
+    %span.search
+      = token_tag nil
+      = text_field_tag 'location_box'
+      = link_to('Add marker', '#', :id=>'location_button', :class => 'button radius tiny')
+      = link_to('Clear', '#', :id=>'clear_button', :class => 'button radius tiny alert')
+
+.row
+  .twelve.columns
+    #map_canvas

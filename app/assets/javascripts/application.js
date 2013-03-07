@@ -10,4 +10,6 @@
 //= require 'nicktrip.js'
 //= require 'tony-map.js'
 //= require 'jane.js'
-//= require "travlr.js"
+//= require 'brian-activities.js'
+//= require 'travlr.js'
+

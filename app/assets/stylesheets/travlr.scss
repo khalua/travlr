@@ -1,5 +1,18 @@
+
 .vote_down_button, .vote_up_button {
   height: 25px;
   width: 25px;
   display: block;
+
+#map_canvas
+{
+  width: 900px;
+  height: 450px;
+  margin-bottom: 40px;
+  border: 2px solid black;
+}
+
+.search {
+  display: inline-block;
+
 }

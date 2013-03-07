@@ -16,5 +16,8 @@ R20130306Travlr::Application.routes.draw do
     end
   end
 
+  #delete this at end
+  get "/tc" => 'welcome#tc'
+  post "/welcome" => 'welcome#geo'
 
 end
