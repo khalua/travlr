@@ -21,10 +21,10 @@
 //LOOP OVER USER TRIPS
 .trips#trips
   - @trips.each do |trip|
-    %script
     = hidden_field_tag "trip_id", trip.id
-    = link_to("New Activity", nil, :id=>'new_activity', :class=>'button')
-    ="trip_array.push({name:'#{trip.name}',startdate:'#{trip.startdate}',enddate:'#{trip.enddate}',id:#{trip.id}});"
+    = link_to("New Activity", nil, :id=>'new_activity', :class=>'button radius')
+    %script
+      = "trip_array.push({name:'#{trip.name}',startdate:'#{trip.startdate}',enddate:'#{trip.enddate}',id:#{trip.id}});"
     .tripactivities.hide
       - trip.activities.each do |activity|
         %script
@@ -47,7 +47,6 @@
         = link_to("Save Changes",'#', :id => "activity-save-changes", :class=>'button radius success activity-form-btn')
         = link_to("Cancel", '#', :id =>"activity-cancel", :class=>'button radius alert activity-form-cancel-btn')
         = link_to('Enter', '#', :id =>"activity-enter", :class=>"button radius")
-
 
 
 

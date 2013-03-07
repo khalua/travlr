@@ -55,9 +55,9 @@ function display_activity(activity) {
   var $updown = $('<div>');
   $updown.addClass('updown')
   var $up = $('<img>');
-  $up.attr('src','/assets/add-32.png').addClass('up');
+  $up.attr('src','/assets/up.png').addClass('up');
   var $down = $('<img>');
-  $down.attr('src','/assets/pencil-6-32.png').addClass('down');
+  $down.attr('src','/assets/down.png').addClass('down');
   $updown.append($up).append($down);
 
   var $name = $('<div>');
