@@ -5,13 +5,11 @@ $(function(){
     //$('body').on("click","edit_trip_btn",populate_edit_trip_form);
     $('body').on("click","delete_trip_btn",delete_trip);
 
-
+    populate_all_trips(trip_array);
 });
 
-function create_trip_from_id(trip_id){
-  trip = get_trip(trip_id);
-  create_trip(trip);
-  trip_array.push(trip);
+function add_trip_to_array(trip_id){
+  var trip = get_trip(trip_id);
 }
 
 
