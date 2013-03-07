@@ -58,6 +58,7 @@ function create_trip()
   var name = $('#trip-name').val();
   var startdate = $('#trip-startdate').val();
   var enddate = $('#trip-enddate').val();
+  var token = $('input[name=authenticity_token]').val();
 
   $.ajax({
     dataType: 'json',
@@ -79,6 +80,8 @@ function update_trip()
   var startdate = $('#startdate').val();
   var enddate = $('#enddate').val();
 
+  var token = $('input[name=authenticity_token]').val();
+
   $.ajax({
       dataType: 'json',
       type: "post",
@@ -92,6 +95,8 @@ function delete_trip()
 {
   //MAKE SURE TO FIND TRIP ID
   var trip_id = get_trip_id();
+
+  var token = $('input[name=authenticity_token]').val();
 
   get_trip(trip_id);
 
