@@ -52,9 +52,10 @@ function populate_edit_trip_form()
 
   var trip = get_trip(trip_id);
 
-  $('#name').val(trip.name);
-  $('#startdate').val(trip.startdate);
-  $('#enddate').val(trip.enddate);
+  var name = $('#trip-name').val();
+  var startdate = $('#trip-startdate').val();
+  var enddate = $('#trip-enddate').val();
+  var token = $('input[name=authenticity_token]').val();
   // Move to correct DOM location
   // $('').attach();
 }
