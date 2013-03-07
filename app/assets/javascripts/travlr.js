@@ -1,5 +1,7 @@
 $(function() {
   // event handlers
+  $( ".trip-startdate" ).datepicker();
+  $( ".trip-enddate" ).datepicker();
 
   // shows new trip form
   $('.addtripbutton').click(show_new_trip_form);
