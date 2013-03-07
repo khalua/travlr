@@ -11,13 +11,11 @@ function get_trip_id()
 function get_trip(trip_id)
 {
   var id = trip_id;
-
   $.ajax({
       dataType: 'json',
       type: "get",
       url: "/trips/" + id
     }).done(trip_return);
-
   return false;
 }
 
