@@ -39,7 +39,7 @@ function update_activity()
   dataType: 'json',
   type: "post",
   url: "/activities/"+id,
-  data: {_method:"put", authenticity_token:token, 'activity[name]':name, 'activity[description]':desc, 'activity[duedate]':due, 'activity[address]':address, 'activity[priority_id]':pid, id:tid}
+  data: {_method:"put", authenticity_token:token, 'activity[name]':name, 'activity[description]':description, 'activity[image]':image, 'activity[address]':address, 'activity[id]':id}
   }).done(process_activity);
   return false;
 }

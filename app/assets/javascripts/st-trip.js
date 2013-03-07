@@ -1,4 +1,4 @@
-
+var trip_object;
 // This function gets the trip_id from the dom
 function get_trip_id()
 {
@@ -16,9 +16,17 @@ function get_trip(trip_id)
       dataType: 'json',
       type: "get",
       url: "/trips/" + id
-    }).done(function(){return trip});
+    }).done(trip_return);
 
   return false;
+}
+
+// This function adds the trip object to the trip array
+function trip_return(trip_object)
+{
+  trip_array = _.reject(trip_array, function(t){return t.id == trip_object.id;});
+  trip_array.push(trip_object);
+  // trip_array = _.sortBy(trip_array, function(t){ return t.value;}).reverse();
 }
 
 // This function populates the edit_trip form with trip object information

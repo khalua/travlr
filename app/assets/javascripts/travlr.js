@@ -15,5 +15,5 @@ $(function() {
 
 });
 
-var activities = [];
+
 var token = $("input[name=authenticity_token]").val();
