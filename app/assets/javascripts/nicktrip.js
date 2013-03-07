@@ -37,9 +37,10 @@ function show_trip(trip){
 
   add_activity_button= $('<div>').addClass("new_activity inline button radius").text("New Activity");
 
+  activitydiv = $('<div>').addClass("tripactivities");
 
 /*--- Creating entire trip box*/
-  tripblock.append(showtrip,buttonbox,add_activity_button);
+  tripblock.append(showtrip,buttonbox,add_activity_button,activitydiv);
 
 
 /*--- Adding to trips block------*/
