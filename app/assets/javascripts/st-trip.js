@@ -106,21 +106,21 @@ function delete_trip()
   // var trip_id = get_trip_id();
 
   console.log('Delete Trip');
-
   var id = $(this).parent().prev().prev().text();
-
   var token = $('input[name=authenticity_token]').val();
-
   // get_trip(trip_id);
-
   console.log('This is the id '+id);
-
   $.ajax({
       dataType: 'json',
       type: "post",
       url: "/trips/" + id,
       data: {_method:'delete', authenticity_token:token}
-    }).done(trip_return);
+    }).done(delete_local_trip);
+}
+function delete_local_trip(trip_object){
+  trip_array = _.reject(trip_array, function(t){return t.id == trip_object.id;});
+  $('.trips').empty();
+  populate_all_trips(trip_array);
 }
 
 function show_new_trip_form()
