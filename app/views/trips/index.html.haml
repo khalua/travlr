@@ -2,8 +2,7 @@
   .twelve.columns
     %h1   TRIP SHIT
 %script
-  var trip_array =[];
-%script
+  var trip_array = [];
   var activities = [];
 .addtrip
   .form
@@ -15,7 +14,7 @@
 
   - @trips.each do |trip|
     %script
-      ="add_trip_to_array(#{trip.id});"
+      ="trip_array.push({name:'#{trip.name}',startdate:'#{trip.startdate}',enddate:'#{trip.enddate}'});"
     .tripactivities.hide
       - trip.activities.each do |activity|
         %script
@@ -41,8 +40,8 @@
 
 
 
-%script
-  populate_all_trips(trip_array);
+/ %script
+/   populate_all_trips(trip_array);
 / .trip
 /   .hidden_trip_id
 /   .showtrip

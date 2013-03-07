@@ -1,8 +1,9 @@
+
 $(function(){
     //$('body').on("click",".trip",show_activites);
 
     //$('body').on("click",".trip",brianfunctionto);
-    //$('body').on("click","edit_trip_btn",populate_edit_trip_form);
+    $('body').on("click","edit_trip_btn",populate_edit_trip_form);
     $('body').on("click","delete_trip_btn",delete_trip);
 
     populate_all_trips(trip_array);
@@ -14,7 +15,6 @@ function add_trip_to_array(trip_id){
 
 
 function create_trip(trip){
-  alert("You are creating a trip");
   console.log("Creating- "+ trip);
 
 /*---   Adding trip block -----*/
