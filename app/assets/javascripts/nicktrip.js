@@ -23,13 +23,13 @@ function show_trip(trip){
   tripblock.append($('<div>').addClass("hidden_trip_id").text(trip.id).hide());
   /*--  SHOW TRIP */
   showtrip =$('<div>').addClass("showtrip").addClass('inline');
-      name_div = $('<div>').addClass('trip_name').text(trip.name);
-      startdate_div = $('<div>').addClass('trip_startdate').text(trip.startdate);
-      enddate_div = $('<div>').addClass('trip_editdate').text(trip.editdate);
+      name_div = $('<div>').addClass('trip_name tripattr').text(trip.name);
+      startdate_div = $('<div>').addClass('trip_startdate tripattr').text(trip.startdate);
+      enddate_div = $('<div>').addClass('trip_editdate tripattr').text(trip.editdate);
   showtrip.append(name_div,startdate_div,enddate_div);
 
   /*---  Adding Buttons  ----*/
-  buttonbox = $('<div>').addClass('buttons');
+  buttonbox = $('<div>').addClass('buttons inline buttonbox');
       editbutton = $('<div>').addClass('edit_trip_btn');
       deletebutton = $('<div>').addClass('delete_trip_btn');
   buttonbox.append(editbutton,deletebutton);
