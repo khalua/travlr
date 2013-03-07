@@ -2,6 +2,7 @@ $(function() {
   $('#location_button').click(location_search);
   $('#clear_button').click(clear_markers);
   display_map(37.766915,-122.435074, 10);
+  populate_map();
 
 });
 
@@ -10,6 +11,21 @@ $(function() {
 var map;
 var markers = [];
 
+function populate_map()
+{
+ //this would be a great place to run clear markers, empty the activities array, and repopulate the activity
+ //array when selecting a new trip.
+  _.each(activities, prep_markers);
+}
+
+function prep_markers(activity)
+{
+  title = activity.name;
+  latitude = activity.latitude;
+  longitude = activity.longitude;
+  add_marker(latitude, longitude, title);
+}
+
 function display_map(lat, longitude, zoom)
 {
   var mapOptions = {
@@ -17,7 +33,6 @@ function display_map(lat, longitude, zoom)
     zoom: zoom,
     mapTypeId: google.maps.MapTypeId.ROADMAP
   };
-
   canvas = $('#map_canvas')[0];
   map = new google.maps.Map(canvas, mapOptions);
 }
