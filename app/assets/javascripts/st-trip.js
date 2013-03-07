@@ -111,7 +111,9 @@ function delete_trip()
 
   var token = $('input[name=authenticity_token]').val();
 
-  get_trip(trip_id);
+  // get_trip(trip_id);
+
+  console.log('This is the id '+id);
 
   $.ajax({
       dataType: 'json',
