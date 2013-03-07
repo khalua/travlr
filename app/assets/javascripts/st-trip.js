@@ -40,6 +40,9 @@ function trip_return(trip_object)
 // This function populates the edit_trip form with trip object information
 function populate_edit_trip_form()
 {
+  //hide save button
+  $('#trip_update').show();
+  $('#trip_save').hide();
   //MAKE SURE TO FIND TRIP ID
   var trip_id = get_trip_id();
 
@@ -107,6 +110,7 @@ function show_new_trip_form()
 {
   $('.addtripbutton').hide();
   $('.trip_form').show();
+  $('#trip_update').hide();
 }
 
 function hide_new_trip_form()
