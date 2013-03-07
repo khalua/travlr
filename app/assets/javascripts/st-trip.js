@@ -84,10 +84,10 @@ function update_trip()
 {
   //MAKE SURE TO FIND TRIP ID
   // var trip_id = get_trip_id();
-  var id = $(this).parent.prev().prev().text();
-  var name = $(this).parent.prev().children().first().text();
-  var startdate = $(this).parent.prev().children().first().next().text();
-  var enddate = $(this).parent.prev().children().first().next().next().text();
+  var id = $(this).parent().prev().prev().text();
+  var name = $(this).parent().prev().children().first().text();
+  var startdate = $(this).parent().prev().children().first().next().text();
+  var enddate = $(this).parent().prev().children().first().next().next().text();
 
   // var name = $('#name').val();
   // var startdate = $('#startdate').val();
@@ -109,7 +109,9 @@ function delete_trip()
   //MAKE SURE TO FIND TRIP ID
   // var trip_id = get_trip_id();
 
-  var id = $(this).parent.prev().prev().text();
+  console.log('Delete Trip');
+
+  var id = $(this).parent().prev().prev().text();
 
   var token = $('input[name=authenticity_token]').val();
 
