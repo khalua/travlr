@@ -81,7 +81,7 @@ function update_trip()
 {
   //MAKE SURE TO FIND TRIP ID
   // var trip_id = get_trip_id();
-  var id = $(this).prev().prev().prev().prev().prev().prev().text();
+  var id = $(this).prev().prev().prev().prev().prev().prev().val();
   var name = $(this).prev().prev().prev().prev().prev().val();
   var startdate = $(this).prev().prev().prev().prev().val();
   var enddate = $(this).prev().prev().prev().val();
