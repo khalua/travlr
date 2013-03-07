@@ -5,6 +5,9 @@ class ActivitiesController < ApplicationController
   end
 
   def create
+    activity = Activity.create(params[:activity]);
+
+    render :json => activity
   end
 
   def update
@@ -32,5 +35,4 @@ class ActivitiesController < ApplicationController
     activity.save
     render :json => activity
   end
-
 end

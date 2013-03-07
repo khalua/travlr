@@ -11,5 +11,6 @@
 //= require 'tony-map.js'
 //= require 'jane.js'
 //= require 'brian-activities.js'
+//= require 'jane.js'
 //= require 'travlr.js'
 

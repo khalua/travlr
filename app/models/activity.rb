@@ -19,7 +19,7 @@
 #
 
 class Activity < ActiveRecord::Base
-  attr_accessible :name, :category, :address, :image, :description, :total_votes, :user_id, :activity_id
+  attr_accessible :name, :category, :address, :image, :description, :total_votes, :user_id, :trip_id
   belongs_to :trip
   belongs_to :user
 
