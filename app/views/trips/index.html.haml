@@ -22,7 +22,6 @@
 .trips#trips
   - @trips.each do |trip|
     = hidden_field_tag "trip_id", trip.id
-    = link_to("New Activity", nil, :id=>'new_activity', :class=>'button radius new_activity')
     %script
       = "trip_array.push({name:'#{trip.name}',startdate:'#{trip.startdate}',enddate:'#{trip.enddate}',id:#{trip.id}});"
     .tripactivities.hide
