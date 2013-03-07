@@ -6,7 +6,7 @@ $(function(){
 
     $('body').on("click",".edit_trip_btn",populate_edit_trip_form);
     $('body').on("click",".delete_trip_btn",delete_trip);
-
+    $('body').on("click","#trip_update", update_trip);
     populate_all_trips(trip_array);
 });
 

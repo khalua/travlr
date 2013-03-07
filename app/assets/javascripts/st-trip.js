@@ -80,10 +80,15 @@ function update_trip()
 {
   //MAKE SURE TO FIND TRIP ID
   // var trip_id = get_trip_id();
-  var id = $(this).parent().prev().prev().text();
-  var name = $(this).parent().prev().children().first().text();
-  var startdate = $(this).parent().prev().children().first().next().text();
-  var enddate = $(this).parent().prev().children().first().next().next().text();
+  var id = $(this).prev().prev().prev().prev().prev().prev().text();
+  var name = $(this).prev().prev().prev().prev().prev().val();
+  var startdate = $(this).prev().prev().prev().prev().val();
+  var enddate = $(this).prev().prev().prev().val();
+
+  console.log('This is the id '+id);
+  console.log('This is the name '+name);
+  console.log('This is the startdate '+startdate);
+  console.log('This is the enddate '+enddate);
 
   // var name = $('#name').val();
   // var startdate = $('#startdate').val();
