@@ -34,6 +34,7 @@ function get_trip(trip_id)
 // This function adds the trip object to the trip array
 function trip_return(trip_object)
 {
+  clear_trip_form();
   trip_array = _.reject(trip_array, function(t){return t.id == trip_object.id;});
   trip_array.push(trip_object);
   $('.trips').empty();
@@ -111,21 +112,23 @@ function delete_trip()
   // var trip_id = get_trip_id();
 
   console.log('Delete Trip');
-
   var id = $(this).parent().prev().prev().text();
-
   var token = $('input[name=authenticity_token]').val();
-
   // get_trip(trip_id);
-
   console.log('This is the id '+id);
-
   $.ajax({
       dataType: 'json',
       type: "post",
       url: "/trips/" + id,
       data: {_method:'delete', authenticity_token:token}
-    }).done(trip_return);
+    }).done(delete_local_trip);
+}
+function delete_local_trip(trip_object){
+  clear_trip_form();
+  hide_new_trip_form();
+  trip_array = _.reject(trip_array, function(t){return t.id == trip_object.id;});
+  $('.trips').empty();
+  populate_all_trips(trip_array);
 }
 
 function show_new_trip_form()
@@ -139,4 +142,11 @@ function hide_new_trip_form()
 {
   $('.addtripbutton').show();
   $('.trip_form').hide();
+}
+
+function clear_trip_form(){
+    $('#trip-name').val("");
+    $('#trip-startdate').val("");
+    $('#trip-enddate').val("");
+    $('input[name=authenticity_token]').val("");
 }
