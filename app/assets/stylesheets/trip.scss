@@ -4,10 +4,59 @@ div {
 
 .edit_trip_btn
 {
-  background-image: url('/assets/images/pencil-6-32.png')
+  background-image: url('pencil-6-32.png');
+  height:35px;
+  width:35px;
+  display:inline-block;
+}
+.edit_trip_btn:hover{
+  opacity: .3;
+}
+.delete_trip_btn:hover{
+  opacity: .3;
 }
 
 .delete_trip_btn
 {
-  background-image:url('/assets/images/trash-can-8-32.png');
+  background-image:url('trash-can-8-32.png');
+  height:35px;
+  width:35px;
+  display:inline-block;
 }
+
+.addtripbutton
+{
+  background-image:url('add-32.png');
+  background-repeat:no-repeat;
+  height:35px;
+  width:35px;
+  display:inline-block;
+}
+
+.inline{
+  display: inline-block;
+}
+
+.tripattr{
+  width: 100px;
+  height: 50px;
+  margin: 5px;
+  display: inline-block;
+  background: #CCC;
+}
+.trip-input{
+  width: 100px;
+  height: 50px;
+  margin: 5px;
+  display: inline-block;
+}
+
+.showtrip{
+  height: 55px;
+}
+.trip{
+  box-shadow: 0 0 3px #222;
+  margin: auto;
+}
+
+

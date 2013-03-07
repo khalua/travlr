@@ -5,7 +5,6 @@ class TripsController < ApplicationController
   end
 
   def create
-
     trip = Trip.create(params[:trip])
     @auth.trips << trip
     @auth.save
@@ -19,7 +18,7 @@ class TripsController < ApplicationController
   end
 
   def destroy
-    trip = Task.find(params[:id])
+    trip = Trip.find(params[:id])
     trip.delete
     render :json => trip
   end
@@ -28,5 +27,4 @@ class TripsController < ApplicationController
     trip = Trip.find(params[:id])
     render :json => trip
   end
-
 end

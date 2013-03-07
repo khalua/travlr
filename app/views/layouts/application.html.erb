@@ -4,23 +4,28 @@
   <title>Travlr</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE']}&sensor=false" %>
+  <script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
   <%= csrf_meta_tags %>
 </head>
 <%= render :partial => "layouts/nav" %>
 <body>
-
-  <% if flash[:notice].present? %>
-  <div class='row'>
-    <div class="five columns alert-box alert">
-      <%= flash[:notice] %>
+<div class='container'>
+          <% if flash[:notice].present? %>
+          <div class='row'>
+            <div class="five columns alert-box alert">
+              <%= flash[:notice] %>
+            </div>
+            <div class="seven columns"></div>
+          </div>
+      <% end %>
+      <div class='row'>
+    <div class = "columns twelve">
+    <%= yield %>
     </div>
-    <div class="seven columns"></div>
   </div>
-  <% end %>
-
-<%= yield %>
-
 
 <%= render :partial => "layouts/footer" %>
+</div>
 </body>
 </html>
