@@ -10,6 +10,7 @@
 
 //LOOP OVER USER TRIPS
 .trips#trips
+
   - @trips.each do |trip|
     %script
       ="add_trip_to_array(#{trip.id});"
@@ -26,9 +27,8 @@
 
 #edit_trip_form.hide
 
-
-
-
+%script
+  ="$(document).ready(function(){populate_all_trips(trip_array)});"
 
 
 
