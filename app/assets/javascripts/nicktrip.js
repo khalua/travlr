@@ -8,11 +8,15 @@ $(function(){
 
 });
 
+function create_trip_from_id(trip_id){
+  trip = get_trip(trip_id);
+  create_trip(trip);
+  trip_array.push(trip);
+}
 
 
 function create_trip(trip){
   alert("You are creating a trip");
-  trip = get_trip(trip_id);
   console.log("Creating- "+ trip);
 
 /*---   Adding trip block -----*/
