@@ -4,12 +4,27 @@ div {
 
 .edit_trip_btn
 {
-  background-image: url('/assets/images/pencil-6-32.png')
+  background-image: url('/assets/images/pencil-6-32.png');
+  height:35px;
+  width:35px;
+  display:inline-block;
 }
 
 .delete_trip_btn
 {
   background-image:url('/assets/images/trash-can-8-32.png');
+  height:35px;
+  width:35px;
+  display:inline-block;
+}
+
+.addtripbutton
+{
+  background-image:url('add-32.png');
+  background-repeat:no-repeat;
+  height:35px;
+  width:35px;
+  display:inline-block;
 }
 
 .inline{

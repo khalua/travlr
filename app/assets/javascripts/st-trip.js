@@ -92,3 +92,8 @@ function delete_trip()
       data: {_method:'delete', authenticity_token:token}
     }).done();
 }
+
+function show_new_trip_form()
+{
+
+}
