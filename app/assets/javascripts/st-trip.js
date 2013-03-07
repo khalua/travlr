@@ -44,14 +44,15 @@ function trip_return(trip_object)
 // This function populates the edit_trip form with trip object information
 function populate_edit_trip_form()
 {
-  alert("YOU EDIT");
+
   //hide save button
+
+  //MAKE SURE TO FIND TRIP ID
+
+  show_new_trip_form();
   $('#trip_update').show();
   $('#trip_save').hide();
-  //MAKE SURE TO FIND TRIP ID
-  var trip_id = get_trip_id();
-
-  var trip = get_trip(trip_id);
+  alert("YOU EDIT");
 
   $('#name').val(trip.name);
   $('#startdate').val(trip.startdate);

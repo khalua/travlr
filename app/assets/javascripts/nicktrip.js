@@ -1,18 +1,18 @@
 
-
 $(function(){
     //$('body').on("click",".trip",show_activites);
 
     //$('body').on("click",".trip",brianfunctionto);
-
+    $('body').on("click","edit_trip_btn",populate_edit_trip_form);
     $('body').on("click","delete_trip_btn",delete_trip);
 
-//     populate_all_trips(trip_array);
-// });
+    populate_all_trips(trip_array);
+});
 
-// function add_trip_to_array(trip_id){
-//   var trip = get_trip(trip_id);
-// }
+function add_trip_to_array(trip_id){
+  var trip = get_trip(trip_id);
+}
+
 
 function show_trip(trip){
   console.log("Creating- "+ trip);
@@ -42,9 +42,6 @@ function show_trip(trip){
 
 }
 
-
 function populate_all_trips(trips){
   _.each(trips,show_trip);
 }
-
-
