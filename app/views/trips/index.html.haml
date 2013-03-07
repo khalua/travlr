@@ -7,14 +7,15 @@
 .addtrip
   .form
     //FORM STUFF GOES HERE FOR ADD
-  .addtripbutton
+  .addtripbutton.button.small
+    Add
 
 //LOOP OVER USER TRIPS
 .trips#trips
 
   - @trips.each do |trip|
     %script
-      ="trip_array.push({name:'#{trip.name}',startdate:'#{trip.startdate}',enddate:'#{trip.enddate}'});"
+      ="trip_array.push({name:'#{trip.name}',startdate:'#{trip.startdate}',enddate:'#{trip.enddate}',id:#{trip.id}});"
     .tripactivities.hide
       = link_to("New Activity", nil, :id=>'new_activity', :class=>'button')
       - trip.activities.each do |activity|
