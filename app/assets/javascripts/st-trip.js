@@ -95,5 +95,6 @@ function delete_trip()
 
 function show_new_trip_form()
 {
-
+  $('.addtripbutton').hide();
+  $('.form').show();
 }

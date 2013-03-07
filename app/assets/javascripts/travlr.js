@@ -2,7 +2,7 @@ $(function() {
   // event handlers
 
   // shows new trip form
-  $('.addtripbutton').click(testing_stuff);
+  $('.addtripbutton').click(show_new_trip_form);
 
   // shows/hide activity form
   $('.trip').click(process_activity);
