@@ -6,18 +6,18 @@ $(function() {
   // Creates a new trip from the form
   $('#trip_save_changes').click(create_trip);
   // shows/hide activity form
-  $('.trip').click(process_activity);
+  //$('.trip').click(process_activity);
   $('#create_activity').click(create_activity);
 
 
 
   $('#new_activity').click(show_activity_form);
-  process_activity();
+  //process_activity();
 
   //gets activity from db
-  $(".activity_form").on("click", ".edit-activity-btn", edit_activity);
+  //$(".activity_form").on("click", ".edit-activity-btn", edit_activity);
   //updates activity info
-  $("#activity-save-changes").click(update_activity);
+  //$("#activity-save-changes").click(update_activity);
 
 
 });
