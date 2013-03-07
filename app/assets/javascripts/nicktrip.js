@@ -14,7 +14,7 @@ function add_trip_to_array(trip_id){
 }
 
 
-function create_trip(trip){
+function show_trip(trip){
   console.log("Creating- "+ trip);
 
 /*---   Adding trip block -----*/
@@ -22,7 +22,7 @@ function create_trip(trip){
   /*add hidden trip*/
   tripblock.append($('<div>').addClass("hidden_trip_id").text(trip.id).hide());
   /*--  SHOW TRIP */
-  showtrip =$('<div>').addClass("showtrip");
+  showtrip =$('<div>').addClass("showtrip").addClass('inline');
       name_div = $('<div>').addClass('trip_name').text(trip.name);
       startdate_div = $('<div>').addClass('trip_startdate').text(trip.startdate);
       enddate_div = $('<div>').addClass('trip_editdate').text(trip.editdate);
@@ -43,7 +43,7 @@ function create_trip(trip){
 }
 
 function populate_all_trips(trips){
-  _.each(trips,create_trip);
+  _.each(trips,show_trip);
 }
 
 function populate_edit_trip_form()
