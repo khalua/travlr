@@ -21,14 +21,14 @@ function create_activity() {
 }
 
 function process_activity(activity) {
-    if(activity == undefined) {
-       activity = activities
-    } else {
+  /*  if(activity == undefined) {
+       activity = activities;
+    } else {*/
       activities.push(activity);
-    }
-
+    /*}
+*/
     $('.tripactivities').empty();
-  _.each(activities, display_activity)
+  _.each(activities, display_activity);
 }
 
 
