@@ -1,6 +1,6 @@
 .row
   .twelve.columns
-%h1   TRIP SHIT
+    %h1   TRIP SHIT
 %script
   var trip_array =[];
 .addtrip
@@ -15,13 +15,18 @@
       - trip.activities.each do |activity|
         %script
           = "activities.push({name:'#{activity.name}', description:'#{activity.description}',image:'#{activity.image}',address:'#{activity.address}',longitude:#{activity.longitude},latitude:#{activity.latitude},total_votes:#{activity.total_votes},trip_id:#{activity.trip_id}});"
-.activity_form.hide
-  = form_tag('/trips') do
-    = text_field_tag 'activity-name'
-    = text_area_tag  'activity-description'
-    = link_to "Save Changes", :class=>'button radius success tiny activity-form-btn'
-    = link_to "Cancel", :class=>'button radius alert activity-form-cancel-btn'
-    = submit_tag 'Enter'
+.row
+  .five.columns
+    .activity_form
+      = form_tag('/trips') do
+        = text_field_tag 'activity-name'
+        = text_area_tag  'activity-description'
+        = text_field_tag "activity-address"
+        = text_field_tag "activity-image"
+        = hidden_field_tag "activity-id"
+        = link_to("Save Changes",nil, :id => "activity-save-changes", :class=>'button radius success activity-form-btn')
+        = link_to("Cancel", nil, :id =>"activity-cancel", :class=>'button radius alert activity-form-cancel-btn')
+        = link_to('Enter', nil, :id =>"activity-enter", :class=>"button radius")
 
 #edit_trip_form.hide
 

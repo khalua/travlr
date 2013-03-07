@@ -1,7 +1,7 @@
 $(function(){
     //$('body').on("click",".trip",show_activites);
 
-    $('body').on("click","")
+    $('body').on("click","");
     $('body').on("click","edit_trip_btn",populate_edit_trip_form);
     $('body').on("click","delete_trip_btn",delete_trip);
 

@@ -9,7 +9,7 @@ function create_activity() {
 
 
 
-function process_activity() {
+function process_activities() {
 
 }
 
