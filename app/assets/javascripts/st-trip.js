@@ -3,15 +3,18 @@ var trip_object;
 $(function(){
   // shows new trip form
   $('.addtripbutton').click(show_new_trip_form);
+  // cancels new trip form
+  $('#trip_cancel').click(hide_new_trip_form);
   // Creates a new trip from the form
   $('#trip_save').click(create_trip);
+  $('body').on("click",".edit_trip_btn",populate_edit_trip_form);
 });
 
 // This function gets the trip_id from the dom
 function get_trip_id()
 {
   //MAKE SURE TO FIND TRIP ID
-  // var trip_id = $('').text();
+  // var trip_id = $(this).parent.prev().prev().text();
   // return trip_id
 }
 
@@ -32,12 +35,18 @@ function trip_return(trip_object)
 {
   trip_array = _.reject(trip_array, function(t){return t.id == trip_object.id;});
   trip_array.push(trip_object);
+  $('.trips').empty();
+  populate_all_trips(trip_array);
   // trip_array = _.sortBy(trip_array, function(t){ return t.value;}).reverse();
 }
 
 // This function populates the edit_trip form with trip object information
 function populate_edit_trip_form()
 {
+  alert("YOU EDIT");
+  //hide save button
+  $('#trip_update').show();
+  $('#trip_save').hide();
   //MAKE SURE TO FIND TRIP ID
   var trip_id = get_trip_id();
 
@@ -56,6 +65,7 @@ function create_trip()
   var name = $('#trip-name').val();
   var startdate = $('#trip-startdate').val();
   var enddate = $('#trip-enddate').val();
+  var token = $('input[name=authenticity_token]').val();
 
   $.ajax({
     dataType: 'json',
@@ -71,11 +81,17 @@ function create_trip()
 function update_trip()
 {
   //MAKE SURE TO FIND TRIP ID
-  var trip_id = get_trip_id();
+  // var trip_id = get_trip_id();
+  var id = $(this).parent.prev().prev().text();
+  var name = $(this).parent.prev().children().first().text();
+  var startdate = $(this).parent.prev().children().first().next().text();
+  var enddate = $(this).parent.prev().children().first().next().next().text();
 
-  var name = $('#name').val();
-  var startdate = $('#startdate').val();
-  var enddate = $('#enddate').val();
+  // var name = $('#name').val();
+  // var startdate = $('#startdate').val();
+  // var enddate = $('#enddate').val();
+
+  var token = $('input[name=authenticity_token]').val();
 
   $.ajax({
       dataType: 'json',
@@ -89,7 +105,11 @@ function update_trip()
 function delete_trip()
 {
   //MAKE SURE TO FIND TRIP ID
-  var trip_id = get_trip_id();
+  // var trip_id = get_trip_id();
+
+  var id = $(this).parent.prev().prev().text();
+
+  var token = $('input[name=authenticity_token]').val();
 
   get_trip(trip_id);
 
@@ -104,5 +124,12 @@ function delete_trip()
 function show_new_trip_form()
 {
   $('.addtripbutton').hide();
-  $('.form').show();
+  $('.trip_form').show();
+  $('#trip_update').hide();
+}
+
+function hide_new_trip_form()
+{
+  $('.addtripbutton').show();
+  $('.trip_form').hide();
 }
