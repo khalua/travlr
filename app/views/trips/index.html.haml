@@ -16,8 +16,9 @@
   - @trips.each do |trip|
     %script
       ="add_trip_to_array(#{trip.id});"
+    = hidden_field_tag "trip_id", trip.id
+    = link_to("New Activity", nil, :id=>'new_activity', :class=>'button')
     .tripactivities
-      = link_to("New Activity", nil, :id=>'new_activity', :class=>'button')
       - trip.activities.each do |activity|
         %script
           = "activities.push({name:'#{activity.name}', description:'#{activity.description}',image:'#{activity.image}',address:'#{activity.address}',longitude:#{activity.longitude},latitude:#{activity.latitude},total_votes:#{activity.total_votes},trip_id:#{activity.trip_id}});"
@@ -35,7 +36,6 @@
         = text_field_tag "activity-address"
         = label_tag      'Image'
         = text_field_tag "activity-image"
-        = hidden_field_tag "trip_id"
         = link_to("Save Changes",nil, :id => "activity-save-changes", :class=>'button radius success activity-form-btn')
         = link_to("Cancel", nil, :id =>"activity-cancel", :class=>'button radius alert activity-form-cancel-btn')
         = link_to('Enter', nil, :id =>"create_activity", :class=>"button radius")
