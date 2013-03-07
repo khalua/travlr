@@ -45,9 +45,9 @@ function populate_edit_trip_form()
 // This function creates a trip through AJAX
 function create_trip()
 {
-  var name = $('#name').val();
-  var startdate = $('#startdate').val();
-  var enddate = $('#enddate').val();
+  var name = $('#trip-name').val();
+  var startdate = $('#trip-startdate').val();
+  var enddate = $('#trip-enddate').val();
 
   $.ajax({
     dataType: 'json',

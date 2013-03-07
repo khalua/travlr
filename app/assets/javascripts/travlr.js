@@ -3,7 +3,8 @@ $(function() {
 
   // shows new trip form
   $('.addtripbutton').click(show_new_trip_form);
-
+  // Creates a new trip from the form
+  $('#trip_save_changes').click(create_trip);
   // shows/hide activity form
   $('.trip').click(process_activity);
   $('#create_activity').click(create_activity);
