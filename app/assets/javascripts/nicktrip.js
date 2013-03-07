@@ -4,7 +4,7 @@ $(function(){
     //$('body').on("click",".trip",show_activites);
 
     //$('body').on("click",".trip",brianfunctionto);
-    $('body').on("click","edit_trip_btn",populate_edit_trip_form);
+
     $('body').on("click","delete_trip_btn",delete_trip);
 
 //     populate_all_trips(trip_array);
@@ -33,7 +33,6 @@ function show_trip(trip){
       editbutton = $('<div>').addClass('edit_trip_btn');
       deletebutton = $('<div>').addClass('delete_trip_btn');
   buttonbox.append(editbutton,deletebutton);
->>>>>>> 0e017e8db390725b2a3809f449ec531455a18459
 
 /*--- Creating entire trip box*/
   tripblock.append(showtrip,buttonbox);
@@ -49,7 +48,3 @@ function populate_all_trips(trips){
 }
 
 
-function populate_edit_trip_form()
-{
-
-}
