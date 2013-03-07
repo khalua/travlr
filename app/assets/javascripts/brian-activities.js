@@ -1,5 +1,4 @@
 // builds the page
-var activities = [];
 
 
 function create_activity() {
@@ -11,9 +10,10 @@ function create_activity() {
     dataType: 'json',
     type: 'post',
     url: '/activities',
-    data:{authenticity_token:token,}
+    data:{authenticity_token:token}
 
   }).done({});
+
 }
 
 
@@ -22,6 +22,7 @@ function create_activity() {
 function process_activity() {
   _.each(activities, display_activity)
 }
+
 
 
 function display_activity(activity) {

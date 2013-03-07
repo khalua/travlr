@@ -1,31 +1,30 @@
 .row
   .twelve.columns
-    %h1   TRIP SHIT
+%h1   TRIP SHIT
+%script
+  var trip_array =[];
+.addtrip
+  .form
+    //FORM STUFF GOES HERE FOR ADD
+  .addtripbutton
+
+//LOOP OVER USER TRIPS
+.trips#trips
+  - @trips.each do |trip|
     %script
-      var trip_array =[];
-    .addtrip
-      .form
-        //FORM STUFF GOES HERE FOR ADD
-      .addtripbutton
+      ="add_trip_to_array(#{trip.id});"
 
-    //LOOP OVER USER TRIPS
-    .trips#trips
-      - @trips.each do |trip|
-        .tripactivities
-          - trip.activities.each do |activity|
-            %script
-              = "activities.push({name:'#{activity.name}', description:'#{activity.description}',image:'#{activity.image}',address:'#{activity.address}',longitude:#{activity.longitude},latitude:#{activity.latitude},total_votes:#{activity.total_votes},trip_id:#{activity.trip_id}});"
 
-    .activity_form
-      = form_tag('/trips') do
-        = text_field_tag 'activity-name'
-        = text_area_tag  'activity-description'
-        = hidden_field_tag 'trip_id'
-        = link_to "Save Changes", :class=>'button radius success tiny activity-form-btn'
-        = link_to "Cancel", :class=>'button radius alert activity-form-cancel-btn'
-        = submit_tag 'Enter'
 
-    #edit_trip_form.hide
+.activity_form.hide
+  = form_tag('/trips') do
+    = text_field_tag 'Name'
+    = text_area_tag  'Description'
+    = link_to "Save Changes", :class=>'button radius success tiny activity-form-btn'
+    = link_to "Cancel", :class=>'button radius alert activity-form-cancel-btn'
+    = submit_tag 'Enter'
+
+#edit_trip_form.hide
 
 
 
@@ -37,10 +36,8 @@
 //%script
 //  create_trip(trip.id);
 / .trip
+/   .hidden_trip_id
 /   .showtrip
-/     .updowns
-/       .up
-/       .down
 /     .trip_name=trip.name
 /     .trip_startdate=trip.startdate
 /     .trip_enddate=trip.enddate
