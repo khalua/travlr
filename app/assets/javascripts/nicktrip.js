@@ -30,8 +30,8 @@ function create_trip(trip){
 
   /*---  Adding Buttons  ----*/
   buttonbox = $('<div>').addClass('buttons');
-      editbutton = $('<div>').addClass('.edit_trip_btn');
-      deletebutton = $('<div>').addClass('.delete_trip_btn');
+      editbutton = $('<div>').addClass('edit_trip_btn');
+      deletebutton = $('<div>').addClass('delete_trip_btn');
   buttonbox.append(editbutton,deletebutton);
 
 /*--- Creating entire trip box*/
