@@ -20,7 +20,7 @@ function create_activity() {
 
 
 
-function process_activity() {
+function process_activities() {
 
   _.each(activities, display_activity)
 }
