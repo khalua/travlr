@@ -5,6 +5,7 @@ class TripsController < ApplicationController
   end
 
   def create
+    binding.pry
     trip = Trip.create(params[:trip])
     @auth.trips << trip
     @auth.save

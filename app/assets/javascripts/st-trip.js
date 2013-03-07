@@ -1,4 +1,12 @@
 var trip_object;
+
+$(function(){
+  // shows new trip form
+  $('.addtripbutton').click(show_new_trip_form);
+  // Creates a new trip from the form
+  $('#trip_save').click(create_trip);
+});
+
 // This function gets the trip_id from the dom
 function get_trip_id()
 {
