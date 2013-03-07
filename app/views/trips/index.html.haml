@@ -6,7 +6,7 @@
   var activities = [];
 .addtrip
   .trip_form
-    = form_tag('/trips') do
+    = form_tag("#")do
       = text_field_tag 'trip-name', nil, :placeholder => "Trip Name",:class=>"trip-input"
       = text_field_tag 'trip-startdate', nil, :placeholder => "Start Date",:class=>"trip-input"
       = text_field_tag 'trip-enddate', nil, :placeholder => "End Date",:class=>"trip-input"
@@ -14,7 +14,7 @@
       = link_to("Cancel", nil, :id =>"trip_cancel", :class=>'button radius alert activity-form-cancel-btn')
       = link_to('Save Updated Trip', nil, :id =>"trip_update", :class=>"button radius")
     //FORM STUFF GOES HERE FOR ADD
-  .addtripbutton.small
+.addtripbutton.small
 
 
 //LOOP OVER USER TRIPS

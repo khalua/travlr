@@ -1,5 +1,7 @@
 $(function() {
   // event handlers
+  $( ".trip-startdate" ).datepicker();
+  $( ".trip-enddate" ).datepicker();
 
   // shows/hide activity form
   //$('.trip').click(process_activity);
