@@ -7,6 +7,7 @@ $(function(){
   $('#trip_cancel').click(hide_new_trip_form);
   // Creates a new trip from the form
   $('#trip_save').click(create_trip);
+  $('body').on("click",".edit_trip_btn",populate_edit_trip_form);
 });
 
 // This function gets the trip_id from the dom
@@ -42,6 +43,7 @@ function trip_return(trip_object)
 // This function populates the edit_trip form with trip object information
 function populate_edit_trip_form()
 {
+  alert("YOU EDIT");
   //hide save button
   $('#trip_update').show();
   $('#trip_save').hide();

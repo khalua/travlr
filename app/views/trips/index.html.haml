@@ -7,6 +7,7 @@
 .addtrip
   .trip_form.hide
     = form_tag("#")do
+      = hidden_field_tag('trip_id')
       = text_field_tag 'trip-name', nil, :placeholder => "Trip Name",:class=>"trip-input"
       = text_field_tag 'trip-startdate', nil, :placeholder => "Start Date",:class=>"trip-input"
       = text_field_tag 'trip-enddate', nil, :placeholder => "End Date",:class=>"trip-input"
