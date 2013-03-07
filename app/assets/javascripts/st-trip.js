@@ -54,7 +54,7 @@ function create_trip()
     type: "post",
     url: "/trips",
     data: {authenticity_token:token, 'trip[name]':name, 'trip[startdate]':startdate, 'trip[enddate]':enddate }
-  }).done();
+  }).done(trip_return);
 
   return false;
 }
@@ -74,7 +74,7 @@ function update_trip()
       type: "post",
       url: "/trips/" + id,
       data: {_method:'put', authenticity_token:token, 'trip[name]':name, 'trip[startdate]':startdate, 'trip[enddate]':enddate}
-    }).done();
+    }).done(trip_return);
 }
 
 // This function deletes the trip
@@ -90,7 +90,7 @@ function delete_trip()
       type: "post",
       url: "/trips/" + id,
       data: {_method:'delete', authenticity_token:token}
-    }).done();
+    }).done(trip_return);
 }
 
 function show_new_trip_form()
